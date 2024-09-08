@@ -1,0 +1,243 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: whitesmoke;
+}
+
+.container {
+    display: grid;
+    grid-template-areas:
+        "header"
+        "main"
+        "sidebar"
+        "ads"
+        "footer";
+    grid-template-rows: auto 1fr auto;
+    gap: 5px;
+    padding: 5px;
+    height: 100%; 
+    /* Full height layout */
+}
+
+.header {
+    grid-area: header;
+    background: lightblue;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    margin-top: 10px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: black;
+}
+
+.main {
+    grid-area: main;
+    /* background: lightcoral; */
+    padding: 20px;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background: lightgoldenrodyellow;
+    padding: 20px;
+}
+
+.sideList {
+    list-style: none;
+    line-height: 2.5;
+    margin-top: 10px;
+}
+
+.sideList li a {
+    text-decoration: none;
+    color: blueviolet;
+    &:hover{
+        color: green;
+    }
+}
+
+/* Main content container */
+#main-content {
+    padding: 20px;
+    background-color: #f4f4f4;
+    min-height: 400px; /* Ensure there's always some height */
+  }
+  
+  
+  /* Content areas for nav and sidebar */
+  #main-content  {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+/* Nav Hover Effect Start */
+/* Basic styling for the navigation */
+.navItems {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .navItems li a {
+    text-decoration: none;
+    padding: 10px;
+    position: relative;
+    display: inline-block;
+    color: #333;
+    font-size: 18px;
+  }
+
+  .navItems li a:hover {
+    border-top: 2px solid #333;
+    transition: border-top 0.3s ease;
+  }
+  
+  /* Create the border-top using the ::before pseudo-element */
+  .navItems li a::before {
+    content: "";
+    position: absolute;
+    bottom: -5px; /* Offset the line slightly below the text */
+    left: 0;
+    width: 100%;
+    height: 2px; /* Thickness of the line */
+    background-color: #333;
+    transform: scaleX(0); /* Start with the line hidden */
+    transform-origin: left;
+    transition: transform 0.3s ease; /* Ease effect on hover */
+  }
+  
+  /* On hover, reveal the border */
+  .navItems li a:hover::before {
+    transform: scaleX(1); /* Expand the line fully */
+  }
+
+  /* Nave Hover End */
+
+.ads {
+    grid-area: ads;
+    background: lightgreen;
+    padding: 20px;
+    min-height: 200px; /* Fixes background issue */
+}
+
+.footer {
+    grid-area: footer;
+    background: lightgray;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Mobile Layout */
+@media (max-width: 768px) {
+    .container {
+        grid-template-areas:
+            "header"
+            "main"
+            "sidebar"
+            "ads"
+            "footer";
+    }
+
+    .nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ads {
+        width: 100%;
+    }
+}
+
+/* Tablet Layout */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header header"
+            "main main"
+            /* "ads" */
+            "sidebar ads"
+            "footer footer";
+    }
+
+    .sidebar {
+        order: 2;
+    }
+
+    .main {
+        order: 1;
+    }
+}
+
+/* Desktop Layout */
+@media (min-width: 1024px) {
+    .container {
+        grid-template-columns: 1fr 3fr 1fr;
+        grid-template-areas:
+            "header header header"
+            "sidebar main ads"
+            "footer footer footer";
+    }
+
+    .main {
+        order: 1;
+    }
+
+    .sidebar {
+        order: 2;
+    }
+
+    .ads {
+        min-height: 100%; /* Ensure the ads section takes the full height available */
+    }
+}
+
+/* Apply Unique Style */
+/* Home page styles */
+.home-page {
+    background-color: lightblue;
+    padding: 20px;
+    text-align: center;
+}
+
+/* About page styles */
+.about-page {
+    background-color: lightcoral;
+    padding: 30px;
+    text-align: left;
+}
+
+/* Services page styles */
+.services-page {
+    background-color: lightgreen;
+    padding: 25px;
+    text-align: right;
+}
+
+/* Services page styles */
+.contact-page {
+    background-color: lightgray;
+    padding: 25px;
+    text-align: left;
+}
