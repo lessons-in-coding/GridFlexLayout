@@ -1,0 +1,77 @@
+/* Styles for the Table of Contents floating button and list */
+#toc-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+#toc-button {
+  background-color: var(--secondary-color);
+  color: var(--site-color);
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+#toc-button:hover {
+  transform: scale(1.1);
+}
+
+#toc-list {
+  display: none; /* Ensure it's hidden by default */
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 250px;
+  max-height: 300px;
+  background-color: var(--primary-bg-color);
+  border: 1px solid var(--secondary-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  padding: 15px;
+  overflow-y: auto;
+  transition: all 0.3s ease;
+}
+
+#toc-list h3 {
+  margin-bottom: 10px;
+  color: var(--secondary-color);
+}
+
+#toc-list ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#toc-list ul li {
+  margin-bottom: 10px;
+}
+
+#toc-list ul li a {
+  text-decoration: none;
+  color: var(--secondary-color);
+  font-size: 16px;
+}
+
+#toc-list ul li a:hover {
+  text-decoration: underline;
+  color: var(--tertiary-color);
+}
+
+/* Use these classes for showing/hiding */
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}

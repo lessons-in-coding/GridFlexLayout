@@ -48,6 +48,57 @@ function loadPage(page) {
   }
 }
 
+// ReadMore
+function toggleReadMore() {
+  // Get the clicked link
+  var btnText = this;
+  
+  // Find the sibling 'moreText' span in the same paragraph
+  var moreText = btnText.previousElementSibling;
+
+  if (moreText.style.display === "none" || moreText.style.display === "") {
+    moreText.style.display = "inline";
+    btnText.innerHTML = "Read Less <<<";
+    btnText.style.color = 'green';
+  } else {
+    moreText.style.display = "none";
+    btnText.innerHTML = " Read More >>>";
+    btnText.style.color = 'purple';
+  }
+}
+
+// Set initial state on page load for all paragraphs
+window.onload = function() {
+  var moreTexts = document.querySelectorAll(".moreText");
+  var readMoreBtns = document.querySelectorAll(".readMore");
+
+  // Hide all 'moreText' sections
+  moreTexts.forEach(function(moreText) {
+    moreText.style.display = "none";
+  });
+
+  // Attach the toggle function to each 'Read More' button
+  readMoreBtns.forEach(function(btn) {
+    btn.addEventListener('click', toggleReadMore);
+  });
+};
+
+/*
+function toggleReadMore(btn) {
+  const moreText = btn.previousElementSibling.querySelector('.read-more');
+  
+  if (moreText.style.display === "none" || moreText.style.display === "") {
+    moreText.style.display = "inline";
+    btn.textContent = "Read Less ...";
+    btn.style.color = "green";
+  } else {
+    moreText.style.display = "none";
+    btn.textContent = "Read More ...";
+    btn.style.color = "purple";
+  }
+}
+  */
+
 // function loadContent(page) {
 //   const mainContent = document.getElementById('main-content');
   
