@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern Responsive Page</title>
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../../css/ToC.css" />
+    <style>
+      #link a {
+        color: green;
+        text-decoration: none;
+      }
+      #back {
+        color: green;
+        background-color: lightblue;
+        padding: 10px 20px;
+        border-radius: 10px;
+        &:hover {
+          background-color: #face77;
+        }
+      }
+      #welcome {
+        background-color: #cdfaed;
+      }
+      /* General Styles */
+      .tabContainer {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      .tabNav {
+        background-color: lightblue;
+        padding: 1rem;
+      }
+
+      .tabNav ul {
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .tabNav ul li {
+        margin: 0;
+      }
+
+      .tabNav ul li a {
+        color: rgb(1, 109, 1);
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        transition: background 0.3s;
+      }
+
+      .tabNav ul li a:hover,
+      .tabNav ul li a.active {
+        background-color: #face77;
+        border-radius: 5px;
+      }
+
+      .content-area {
+        flex: 1;
+        padding: 2rem;
+        background-color: white;
+        margin: 1rem 0;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .content-area h2,
+      .tab-content h3 {
+        color: #333;
+      }
+
+      .content-area p {
+        color: #666;
+      }
+
+      /* Tab Styles */
+      .tab-links {
+        margin-top: 20px;
+        border-bottom: 2px solid #face77;
+        padding-bottom: 10px;
+      }
+
+      .tab-links button {
+        background-color: lightblue;
+        border: none;
+        border-radius: 7px;
+        padding: 10px 20px;
+        margin-right: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .tab-links button:hover,
+      .tab-links button.active {
+        background-color: #befae8;
+      }
+
+      .tab-content {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ဝိနည်း-page container">
+      <main id="main-content" class="main">
+        <p id="link">
+          <a href="../../../index.html"
+            ><span id="back">မူလ စာမျက်နှာသို့</span></a
+          >
+        </p>
+        <p id="welcome">Welcome to အငယ်တန်း ဝိနည်း</p>
+
+        <div class="tabContainer">
+          <!-- Navigation Bar -->
+          <nav class="tabNav">
+            <ul>
+              <li>
+                <a href="#ပါဠိနိဿယ" data-nav="ပါဠိနိဿယ" class="nav-link active">ပါဠိနိဿယ</a>
+              </li>
+              <li>
+                <a href="#အဓိပ္ပါယ်မှတ်စု" data-nav="အဓိပ္ပါယ်မှတ်စု" class="nav-link">အဓိပ္ပါယ်မှတ်စု</a>
+              </li>
+              <li>
+                <a href="#ပုစ္ဆာ" data-nav="ပုစ္ဆာ" class="nav-link">ပုစ္ဆာ</a>
+              </li>
+            </ul>
+          </nav>
+
+          <!-- Main Content Area -->
+          <div id="content" class="content-area">
+            <!-- Tabs will be displayed here dynamically based on the nav link clicked -->
+            <div id="tabs" class="tab-links">
+              <h3>Click a nav link to see the respective tabs</h3>
+            </div>
+
+            <!-- Tab Content will be displayed here -->
+            <div id="tab-content" class="tab-content">
+              <p>Select a tab to display its content.</p>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <p>&copy; 2024 PannaCollege. All rights reserved.</p>
+      </footer>
+    </div>
+
+    <script src="../../js/script.js"></script>
+    <script src="../../js/ToC.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const contentArea = document.getElementById("content");
+        const navLinks = document.querySelectorAll(".nav-link");
+        const tabLinksContainer = document.getElementById("tabs");
+        const tabContentArea = document.getElementById("tab-content");
+
+        // Define tabs and content for each nav section
+        const navTabs = {
+          ပါဠိနိဿယ: ["ပထမခန်း", "ဒုတိယခန်း", "တတိယခန်း"],
+          အဓိပ္ပါယ်မှတ်စု: ["ပထမပိုင်း", "ဒုတိယပိုင်း", "တတိယပိုင်း"],
+          ပုစ္ဆာ: ["ပထမနှစ်-၃၀", "ဒုတိယနှစ်-၃၀", "တတိယနှစ်-၃၀"],
+        };
+
+        const tabsContent = {
+          "ပထမခန်း":
+            "<h3>Welcome to Home - Tab 1</h3><p>This is the content for Home Tab 1.</p>",
+          "ဒုတိယခန်း":
+            "<h3>Welcome to Home - Tab 2</h3><p>This is the content for Home Tab 2.</p>",
+          "တတိယခန်း":
+            "<h3>Welcome to Home - Tab 3</h3><p>This is the content for Home Tab 3.</p>",
+          "ပထမပိုင်း":
+            "<h3>Services - Service 1</h3><p>This is the content for Service 1.</p>",
+          "ဒုတိယပိုင်း":
+            "<h3>Services - Service 2</h3><p>This is the content for Service 2.</p>",
+          "တတိယပိုင်း":
+            "<h3>Services - Service 3</h3><p>This is the content for Service 3.</p>",
+          "ပထမနှစ်-၃၀":
+            "<h3>Contact Us</h3><p>Here is the contact information.</p>",
+          "ဒုတိယနှစ်-၃၀": "<h3>Our Location</h3><p>Here is the location info.</p>",
+          "တတိယနှစ်-၃၀": "<h3>Feedback Form</h3><p>Leave your feedback here.</p>",
+        };
+
+        // Function to load tabs based on nav link
+        function loadTabs(section) {
+          tabLinksContainer.innerHTML = "";
+          tabContentArea.innerHTML =
+            "<p>Select a tab to display its content.</p>"; // Reset content
+          const tabs = navTabs[section];
+          tabs.forEach((tab) => {
+            const button = document.createElement("button");
+            button.className = "tab-link";
+            button.textContent = tab;
+            button.setAttribute("data-tab", tab);
+            tabLinksContainer.appendChild(button);
+
+            // Attach click event listener to each tab
+            button.addEventListener("click", () => {
+              loadTabContent(tab);
+              document
+                .querySelectorAll(".tab-link")
+                .forEach((btn) => btn.classList.remove("active"));
+              button.classList.add("active");
+            });
+          });
+        }
+
+        // Function to load content based on tab clicked
+        function loadTabContent(tab) {
+          tabContentArea.innerHTML = tabsContent[tab];
+        }
+
+        // Attach click event listeners to all nav links
+        navLinks.forEach((link) => {
+          link.addEventListener("click", (e) => {
+            e.preventDefault();
+            const section = link.getAttribute("data-nav");
+            loadTabs(section);
+            document
+              .querySelectorAll(".nav-link")
+              .forEach((nav) => nav.classList.remove("active"));
+            link.classList.add("active");
+          });
+        });
+
+        // Initialize the page with the first nav section
+        loadTabs("ပါဠိနိဿယ"); // Load the 'home' section's tabs by default
+      });
+    </script>
+  </body>
+</html>

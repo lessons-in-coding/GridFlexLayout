@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern Responsive Page</title>
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../../css/ToC.css" />
+    <style>
+      #link a {
+        color: green;
+        text-decoration: none;
+      }
+      #back {
+        color: green;
+        background-color: lightblue;
+        padding: 10px 20px;
+        border-radius: 10px;
+      }
+      #back:hover {
+        background-color: #face77;
+      }
+      #welcome {
+        background-color: #cdfaed;
+      }
+      /* General Styles */
+      .tabContainer {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      .tabNav {
+        background-color: lightblue;
+        padding: 1rem;
+      }
+
+      .tabNav ul {
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .tabNav ul li {
+        margin: 0;
+      }
+
+      .tabNav ul li a {
+        color: rgb(1, 109, 1);
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        transition: background 0.3s;
+      }
+
+      .tabNav ul li a:hover,
+      .tabNav ul li a.active {
+        background-color: #face77;
+        border-radius: 5px;
+      }
+
+      .content-area {
+        flex: 1;
+        padding: 2rem;
+        background-color: white;
+        margin: 1rem 0;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .content-area h2,
+      .tab-content h3 {
+        color: #333;
+      }
+
+      .content-area p {
+        color: #666;
+      }
+
+      /* Tab Styles */
+      .tab-links {
+        margin-top: 20px;
+        border-bottom: 2px solid #face77;
+        padding-bottom: 10px;
+      }
+
+      .tab-links button {
+        background-color: lightblue;
+        border: none;
+        border-radius: 7px;
+        padding: 10px 20px;
+        margin-right: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .tab-links button:hover,
+      .tab-links button.active {
+        background-color: #befae8;
+      }
+
+      .tab-content {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ဝိနည်း-page container">
+      <main id="main-content" class="main">
+        <p id="link">
+          <a href="../../../index.html"
+            ><span id="back">မူလ စာမျက်နှာသို့</span></a
+          >
+        </p>
+        <p id="welcome">မင်္ဂလာပါ သာမဏေကျော်-ပထမဆင့်</p>
+
+        <div class="tabContainer">
+          <!-- Navigation Bar -->
+          <nav class="tabNav">
+            <ul>
+              <li>
+                <a href="#မဟာဝါ" data-nav="မဟာဝါ" class="nav-link active">မဟာဝါ</a>
+              </li>
+              <li>
+                <a href="#အင်္ဂုတ္တိုရ်" data-nav="အင်္ဂုတ္တိုရ်" class="nav-link">အင်္ဂုတ္တိုရ်</a>
+              </li>
+              <li>
+                <a href="#ဓမ္မပဒ" data-nav="ဓမ္မပဒ" class="nav-link">ဓမ္မပဒ</a>
+              </li>
+              <li>
+                <a href="#Git_GitHub" data-nav="Git_GitHub" class="nav-link">Git_GitHub</a>
+              </li>
+            </ul>
+          </nav>
+
+          <!-- Main Content Area -->
+          <div id="content" class="content-area">
+            <!-- Tabs will be displayed here dynamically based on the nav link clicked -->
+            <div id="tabs" class="tab-links">
+              <h3>Click a nav link to see the respective tabs</h3>
+            </div>
+
+            <!-- Tab Content will be displayed here -->
+            <div id="tab-content" class="tab-content">
+              <p>Select a tab to display its content.</p>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <p>&copy; 2024 PannaCollege. All rights reserved.</p>
+      </footer>
+    </div>
+
+    <script src="../../js/script.js"></script>
+    <script src="../../js/ToC.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const contentArea = document.getElementById("content");
+        const navLinks = document.querySelectorAll(".nav-link");
+        const tabLinksContainer = document.getElementById("tabs");
+        const tabContentArea = document.getElementById("tab-content");
+
+        // Define tabs and content for each nav section
+        const navTabs = {
+          မဟာဝါ: ["ဝိ-သဒ္ဒါ", "ဝိ-သင်္ဂြိုဟ်", "ဝိ-မှတ်စု", "ဝိ-ပုစ္ဆာ"],
+          အင်္ဂုတ္တိုရ်: ["အံ-သဒ္ဒါ", "အံ-သင်္ဂြိုဟ်", "အံ-မှတ်စု", "အံ-ပုစ္ဆာ"],
+          ဓမ္မပဒ: ["ဓမ်-သဒ္ဒါ", "ဓမ်-သင်္ဂြိုဟ်", "ဓမ်-မှတ်စု", "ဓမ်-ပုစ္ဆာ"],
+          Git_GitHub: ["Git", "Install", "GitHub", "Pages"],
+        };
+
+        const tabsContent = {
+          "ဝိ-သဒ္ဒါ":
+            "<h3>Welcome to မဟာဝါ - Tab 1</h3><p>This is the content for မဟာဝါ Tab 1.</p>",
+          "ဝိ-သင်္ဂြိုဟ်":
+            "<h3>Welcome to Home - Tab 2</h3><p>This is the content for Home Tab 2.</p>",
+          "ဝိ-မှတ်စု":
+            "<h3>Welcome to Home - Tab 3</h3><p>This is the content for Home Tab 3.</p>",
+          "ဝိ-ပုစ္ဆာ":
+            "<h3>Welcome to Home - Tab 3</h3><p>This is the content for Home Tab 3.</p>",
+          "အံ-သဒ္ဒါ":
+            "<h3>Services - အင်္ဂုတ္တိုရ် 1</h3><p>This is the content for အင်္ဂုတ္တိုရ် 1.</p>",
+          "အံ-သင်္ဂြိုဟ်":
+            "<h3>Services - Service 2</h3><p>This is the content for Service 2.</p>",
+          "အံ-မှတ်စု":
+            "<h3>Services - Service 3</h3><p>This is the content for Service 3.</p>",
+          "အံ-ပုစ္ဆာ":
+            "<h3>Welcome to Home - Tab 3</h3><p>This is the content for Home Tab 3.</p>",
+          "ဓမ်-သဒ္ဒါ":
+            "<h3>ဓမ္မပဒ</h3><p>Here is the contact information.</p>",
+          "ဓမ်-သင်္ဂြိုဟ်": "<h3>Our Location</h3><p>Here is the location info.</p>",
+          "ဓမ်-မှတ်စု": "<h3>Feedback Form</h3><p>Leave your feedback here.</p>",
+          "ဓမ်-ပုစ္ဆာ":
+            "<h3>Welcome to Home - Tab 3</h3><p>This is the content for Home Tab 3.</p>",
+          "Git":
+            "<h3>ဓမ္မပဒ</h3><p>Here is the contact information.</p>",
+          "Install": "<h3>Our Location</h3><p>Here is the location info.</p>",
+          "GitHub": "<h3>Feedback Form</h3><p>Leave your feedback here.</p>",
+          "Pages":
+            "<h3>Welcome to Home - Tab 3</h3><p>This is the content for Home Tab 3.</p>",
+        };
+
+        // Function to load tabs based on nav link
+        function loadTabs(section) {
+          tabLinksContainer.innerHTML = "";
+          tabContentArea.innerHTML =
+            "<p>Select a tab to display its content.</p>"; // Reset content
+          const tabs = navTabs[section];
+          tabs.forEach((tab) => {
+            const button = document.createElement("button");
+            button.className = "tab-link";
+            button.textContent = tab;
+            button.setAttribute("data-tab", tab);
+            tabLinksContainer.appendChild(button);
+
+            // Attach click event listener to each tab
+            button.addEventListener("click", () => {
+              loadTabContent(tab);
+              document
+                .querySelectorAll(".tab-link")
+                .forEach((btn) => btn.classList.remove("active"));
+              button.classList.add("active");
+            });
+          });
+        }
+
+        // Function to load content based on tab clicked
+        function loadTabContent(tab) {
+          tabContentArea.innerHTML = tabsContent[tab];
+        }
+
+        // Attach click event listeners to all nav links
+        navLinks.forEach((link) => {
+          link.addEventListener("click", (e) => {
+            e.preventDefault();
+            const section = link.getAttribute("data-nav");
+            loadTabs(section);
+            document
+              .querySelectorAll(".nav-link")
+              .forEach((nav) => nav.classList.remove("active"));
+            link.classList.add("active");
+          });
+        });
+
+        // Initialize the page with the first nav section
+        loadTabs("မဟာဝါ"); // Load the 'မဟာဝါ' section's tabs by default
+      });
+    </script>
+  </body>
+</html>
+
+<!-- 
+in JavaScript, object keys that consist of simple strings (without spaces or special characters) do not require quotes. However, if an object key includes spaces, special characters, or numbers, it needs to be enclosed in quotes.
+
+Here’s the distinction:
+
+1.	No quotes needed: If a key consists of a valid identifier (e.g., alphanumeric characters or underscores, starting with a letter), you can omit the quotes:
+
+const example = {
+  Git: "Git information",
+  Install: "Installation guide",
+  GitHub: "GitHub details",
+  Pages: "Pages info",
+};
+
+2.	Quotes required: If a key includes spaces, special characters (like -, .), or starts with a number, you must enclose the key in quotes:
+
+const example = {
+  "Git_GitHub": "Git and GitHub",
+  "First Key": "This key contains a space",
+  "123Key": "This key starts with a number",
+};
+
+In the case of Git, Install, GitHub, and Pages, these are simple strings (without spaces or special characters), so quotes are optional and not strictly necessary. But for Git_GitHub (because of the underscore _), quotes are needed.
+-->

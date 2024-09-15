@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern Responsive Page</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/ToC.css" />
+  </head>
+  <body>
+    <div class="သာမဏေကျော်-page container">
+      <!-- <header class="header">
+        <h1>PannaCollege</h1>
+        <nav class="nav">
+          <ul class="navItems">
+            <li>
+              <a href="#" onclick="loadPage('./assets/pages/home')">Home</a>
+            </li>
+            <li>
+              <a href="#" onclick="loadPage('./assets/pages/about')">About</a>
+            </li>
+            <li>
+              <a href="#" onclick="loadPage('./assets/pages/services')"
+                >Services</a
+              >
+            </li>
+            <li>
+              <a href="#" onclick="loadPage('./assets/pages/contact')"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </header> -->
+
+      <main id="main-content" class="main">
+
+        <!-- Include this section within the body of your HTML -->
+        <!-- Optional: Add this to make search results stand out -->
+        <div id="search-results" class="search-results"></div>
+
+        <!-- Initial content will always be here -->
+        <!-- <div>
+          <h2 class="section-title secondary-border">
+            Welcome to the Homepage
+          </h2>
+        </div> -->
+        <p id="welcome">
+          မင်္ဂလာပါ၊ သာမဏေကျော်-မှ ကြိုဆိုလိုက်ပါတယ် -
+        </p>
+
+        <!-- Cards -->
+        <section>
+          <!-- <link
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet"
+          /> -->
+          <div class="cards">
+            <div class="card">
+              <!-- <img
+                class="card__image"
+                src="#"
+                alt="Placeholder Image"
+              /> -->
+              <div class="cardTitle">
+                <h2>Title of this Page</h2>
+                <h4>This is HTML</h4>
+              </div>
+              <div class="card__content">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
+                  ducimus id ab tenetur delectus reiciendis fugit autem qui at.
+                </p>
+              </div>
+              <div class="card__info">
+                <!-- <div><i class="material-icons">thumb_up</i>1,993</div> -->
+                <div>
+                  <a href="./assets/pages/သင်္ခန်းစာများ/သာမဏေကျော်-ပထမဆင့်.html" class="card__link"
+                    >View Article</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <!-- <img
+                class="card__image"
+                src="#"
+                alt="Placeholder Image"
+              /> -->
+              <div class="cardTitle">
+                <h2>Title of this Page</h2>
+                <h4>This is HTML</h4>
+              </div>
+              <div class="card__content">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
+                  ducimus id ab tenetur delectus reiciendis fugit autem qui at.
+                </p>
+              </div>
+              <div class="card__info">
+                <!-- <div><i class="material-icons">thumb_up</i>1,993</div> -->
+                <div>
+                  <a href="./assets/pages/သင်္ခန်းစာများ/သာမဏေကျော်-ဒုတိယဆင့်.html"" class="card__link"
+                    >View Article</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <!-- <img
+                class="card__image"
+                src="#"
+                alt="Placeholder Image"
+              /> -->
+              <div class="cardTitle">
+                <h2>Title of this Page</h2>
+                <h4>This is HTML</h4>
+              </div>
+              <div class="card__content">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
+                  ducimus id ab tenetur delectus reiciendis fugit autem qui at.
+                </p>
+              </div>
+              <div class="card__info">
+                <!-- <div><i class="material-icons">thumb_up</i>887</div> -->
+                <div>
+                  <a href="./assets/pages/သင်္ခန်းစာများ/သာမဏေကျော်-တတိယဆင့်.html"" class="card__link"
+                    >View Article</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="readMoreContainer">
+          <div class="flex-row">
+            <h2 class="section-title primary-border">Lesson 1</h2>
+          </div>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus
+            vel... Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+            amet aliquid doloremque saepe iure blanditiis vitae doloribus
+            commodi qui modi enim est natus tempore itaque earum quae, porro
+            fugit? Eos!
+            <span class="moreText"
+              >At amet aliquid doloremque saepe iure blanditiis vitae doloribus
+              commodi qui modi enim est natus tempore itaque earum quae, porro
+              fugit? Eos! Lorem ipsum dolor sit amet consectetur adipisicing
+              elit. At amet aliquid doloremque saepe iure blanditiis vitae
+              doloribus commodi qui modi enim est natus tempore itaque earum
+              quae, porro fugit? Eos!</span
+            ><a
+              class="readMore"
+              href="javascript:void(0);"
+              onclick="toggleReadMore()"
+            >
+              Read More >>></a
+            >
+          </p>
+          <br />
+          <div class="flex-row">
+            <h2 class="section-title secondary-border">Lesson 2</h2>
+          </div>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum
+            obcaecati... Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. At amet aliquid doloremque saepe iure blanditiis vitae
+            doloribus commodi qui modi enim est natus tempore itaque earum quae,
+            porro fugit? Eos!
+            <span class="moreText"
+              >At amet aliquid doloremque saepe iure blanditiis vitae doloribus
+              commodi qui modi enim est natus tempore itaque earum quae, porro
+              fugit? Eos! Lorem ipsum dolor sit amet consectetur adipisicing
+              elit. At amet aliquid doloremque saepe iure blanditiis vitae
+              doloribus commodi qui modi enim est natus tempore itaque earum
+              quae, porro fugit? Eos!</span
+            ><a
+              class="readMore"
+              href="javascript:void(0);"
+              onclick="toggleReadMore()"
+            >
+              Read More >>></a
+            >
+          </p>
+          <br />
+          <div class="flex-row">
+            <h2 class="section-title primary-border">Lesson 3</h2>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, non
+            repudiandae... Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. At amet aliquid doloremque saepe iure blanditiis vitae
+            doloribus commodi qui modi enim est natus tempore itaque earum quae,
+            porro fugit? Eos!
+            <span class="moreText"
+              >At amet aliquid doloremque saepe iure blanditiis vitae doloribus
+              commodi qui modi enim est natus tempore itaque earum quae, porro
+              fugit? Eos! Lorem ipsum dolor sit amet consectetur adipisicing
+              elit. At amet aliquid doloremque saepe iure blanditiis vitae
+              doloribus commodi qui modi enim est natus tempore itaque earum
+              quae, porro fugit? Eos!</span
+            ><a
+              class="readMore"
+              href="javascript:void(0);"
+              onclick="toggleReadMore()"
+            >
+              Read More >>></a
+            >
+          </p>
+        </div>
+        <!-- Table of Contents Floating Button -->
+        <div id="toc-container">
+          <button id="toc-button">
+            &#9776;
+            <!-- Icon for the button (hamburger menu style) -->
+          </button>
+          <div id="toc-list" class="hidden">
+            <!-- <h3>Table of Contents</h3> -->
+            <ul id="toc-items">
+              <!-- JavaScript will populate this with headings -->
+            </ul>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <p>&copy; 2024 PannaCollege. All rights reserved.</p>
+      </footer>
+    </div>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/ToC.js"></script>
+  </body>
+</html>
