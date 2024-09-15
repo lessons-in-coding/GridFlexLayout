@@ -66,9 +66,11 @@ body {
 /* Welcome Section */
 #welcome {
   color: var(--secondary-color);
-  margin: 20px auto;
-  padding: 20px;
-  box-shadow: 0px 1px 2px #777;
+  background-color: rgba(232, 230, 230, 0.397);
+  border-radius: 7px;
+  margin: 20px;
+  padding: 10px;
+  box-shadow: 0px 1px 2px #444;
   text-align: center;
   font-size: 1.5rem;
 }
@@ -77,13 +79,18 @@ body {
 .main {
   grid-area: main;
   padding: 20px;
-  width: 90%;
-  margin: 20px auto;
+  margin-bottom: 30px;
+  width: 92%;
+  margin: 0px auto;
 }
 
 .readMoreContainer {
-  margin-top: 20px;
-  padding-top: 20px;
+  margin: 20px auto;
+  padding: 20px auto;
+}
+
+div p {
+  padding: 10px 20px;
 }
 
 .footer {
@@ -199,18 +206,18 @@ body {
   line-height: 1.5;
 }
 
-.moreText {
+.more-text {
   display: none;
 }
 
-.readMore {
-  color: var(--tertiary-color);
+.read-more {
+  color: purple;
   cursor: pointer;
   text-decoration: none;
   font-size: 16px;
 }
 
-.readMore:hover {
+.read-more:hover {
   color: var(--secondary-color);
 }
 
@@ -246,32 +253,47 @@ body {
 }
 
 /* Apply Unique Style */
-/* Home page styles */
-.home-page {
+.မူလတန်း-page {
   background-color: lightblue;
-  padding: 20px;
+  border-radius: 7px;
+  /* padding: 20px;
   text-align: center;
+  margin: 0 auto; */
 }
 
-/* About page styles */
-.about-page {
-  background-color: lightcoral;
-  padding: 30px;
-  text-align: left;
+.အငယ်တန်း-page {
+  background-color: rgb(209, 248, 169);
+  border-radius: 7px;
+  /* padding: 30px; */
+  /* text-align: left; */
 }
 
-/* Services page styles */
-.services-page {
-  background-color: lightgreen;
-  padding: 25px;
-  text-align: right;
+.အလတ်တန်း-page {
+  background-color: rgb(253, 247, 184);
+  border-radius: 7px;
+  /* padding: 25px;
+  text-align: right; */
 }
 
-/* Services page styles */
-.contact-page {
-  background-color: lightgray;
-  padding: 25px;
-  text-align: left;
+.အကြီးတန်း-page {
+  background-color: rgb(241, 185, 250);
+  border-radius: 7px;
+  /* padding: 25px;
+  text-align: left; */
+}
+
+.ဓမ္မာစရိယ-page {
+  background-color: rgb(143, 233, 253);
+  border-radius: 7px;
+  /* padding: 25px;
+  text-align: left; */
+}
+
+.သာမဏေကျော်-page {
+  background-color: rgb(189, 250, 185);
+  border-radius: 7px;
+  /* padding: 25px;
+  text-align: left; */
 }
 
 /* Section Underline */
